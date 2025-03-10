@@ -1,0 +1,1 @@
+nvc -a -f $COMPILE_ORDER

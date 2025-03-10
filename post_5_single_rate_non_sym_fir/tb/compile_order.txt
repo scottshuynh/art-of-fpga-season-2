@@ -1,0 +1,5 @@
+/home/tauburn/repos/art_of_fpga_season_2/package/array_package.vhd
+/home/tauburn/repos/art_of_fpga_season_2/package/standard_package.vhd
+/home/tauburn/repos/art_of_fpga_season_2/post_5_single_rate_non_sym_fir/tb/fir_single_rate_non_symmetric_filter_taps_package.vhd
+/home/tauburn/repos/art_of_fpga_season_2/post_5_single_rate_non_sym_fir/fir_single_rate_non_symmetric_transpose.vhd
+/home/tauburn/repos/art_of_fpga_season_2/post_5_single_rate_non_sym_fir/fir_single_rate_non_symmetric_transpose_pipelined.vhd

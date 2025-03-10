@@ -1,0 +1,1 @@
+PYGPI_PYTHON_BIN=$(which python3) LIBPYTHON_LOC=$(cocotb-config --libpython) COCOTB_TEST_MODULES=$DUT nvc -r $CORE --format=fst --wave=$DUT$generics_flat.fst --ieee-warnings=off --dump-arrays --load=$(cocotb-config --lib-name-path vhpi nvc)
