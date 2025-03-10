@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-art-of-fpga"
+version = "0.0.1"
+authors = [
+    {name="Scott Huynh", email="scott.s.huynh@gmail.com"},
+    ]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "PyQt6",
+    "scipy",
+]
+requires-python = ">=3.12"
+
+description = "Accompanying Python package for Art of FPGA Season 2 example code"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3.12", 
+    "Operating System :: Unix",
+    "Topic :: Software Development :: Testing",
+    ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["py_art_of_fpga"]

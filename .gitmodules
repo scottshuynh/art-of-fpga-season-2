@@ -1,0 +1,6 @@
+[submodule "sub/hdldepends"]
+	path = sub/hdldepends
+	url = https://github.com/pevhall/hdldepends.git
+[submodule "sub/hdlworkflow"]
+	path = sub/hdlworkflow
+	url = https://github.com/scottshuynh/hdlworkflow.git
