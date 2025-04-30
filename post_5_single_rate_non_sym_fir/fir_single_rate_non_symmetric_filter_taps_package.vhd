@@ -1,4 +1,4 @@
--- This file was auto-generated using: `utils.py`
+-- This file was auto-generated using: `py_art_of_fpga: utils.py`
 use work.array_package.all;
 
 package fir_single_rate_non_symmetric_filter_taps_package is

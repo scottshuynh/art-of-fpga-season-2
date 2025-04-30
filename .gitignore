@@ -178,5 +178,7 @@ cython_debug/
 
 # Project specific
 sim/
+nvc/
+vivado/
 *.pickle
 compile_order.txt

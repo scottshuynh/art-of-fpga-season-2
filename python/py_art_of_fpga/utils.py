@@ -44,8 +44,8 @@ def __signed_integer_clip(val: int, val_w: int) -> int:
         int: Clipped value
     """
     if val > 2 ** (val_w - 1) - 1:
-        return 2 ** (val_w - 1) - 1
-    return val
+        return int(2 ** (val_w - 1) - 1)
+    return int(val)
 
 
 def plot(x: np.ndarray, y: np.ndarray, title: str = "", grid_on: bool = True) -> None:
@@ -74,7 +74,7 @@ def export_to_vhdl_package(taps: List[int], package_name: str) -> None:
     """
     with open(f"{package_name}.vhd", "w") as f:
         f.write(
-            f"-- This file was auto-generated using: `{os.path.basename(__file__)}`\n"
+            f"-- This file was auto-generated using: `{__package__ + ": " + os.path.basename(__file__)}`\n"
             f"use work.array_package.all;\n"
             f"\npackage {package_name} is\n"
             f"\tconstant EXAMPLE_TAPS : array_integer_t := ("
