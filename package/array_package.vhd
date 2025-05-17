@@ -10,6 +10,7 @@ package array_package is
 
   function reverse_array(arr : array_integer_t) return array_integer_t;
   function normalise_range(arr : array_integer_t) return array_integer_t;
+  function maximum(arr: array_integer_t) return integer;
 end package array_package;
 
 package body array_package is
@@ -27,6 +28,15 @@ package body array_package is
   begin
     l_normalise : for IDX in 0 to arr'length-1 loop
       result(IDX) := arr(IDX+arr'low);
+    end loop;
+    return result;
+  end function;
+
+  function maximum(arr: array_integer_t) return integer is
+    variable result : integer := 0;
+  begin
+    l_max : for IDX in arr'range loop
+      result := maximum(result, arr(IDX));
     end loop;
     return result;
   end function;
