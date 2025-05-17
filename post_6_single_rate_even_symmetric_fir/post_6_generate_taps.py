@@ -11,8 +11,8 @@ def generate_example_taps(data_w: int, is_generate_package: bool = False) -> Lis
     Returns:
         List[int]: Fixed point integer taps
     """
-    bands: List[float] = [0, 0.1, 0.3, 0.5]  # TODO - Change transition bands to affect tap coeffs
-    num_taps: int = 20  # TODO - Change for any even number of taps
+    bands: List[float] = [0, 0.1, 0.3, 0.5]  # NOTE - Change transition bands to affect tap coeffs
+    num_taps: int = 10  # NOTE - Change for any even number of taps
 
     assert num_taps % 2 == 0, f"num_taps must be even. Got: {num_taps}"
 

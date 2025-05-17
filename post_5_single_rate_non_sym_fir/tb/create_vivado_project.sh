@@ -3,7 +3,7 @@ TEST_MODULE="fir_single_rate_non_symmetric_transpose_pipelined"
 
 # Setting generics
 DATA_W="DATA_W=16"
-M_PIPE="M_PIPE=0"
+M_PIPE="M_PIPE=0" # NOTE: Experiment for any positive integer
 
 # Get compile order
 ROOTDIR=$(git rev-parse --show-toplevel)
