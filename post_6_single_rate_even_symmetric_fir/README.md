@@ -3,7 +3,7 @@ Latency of `N/2+3` clock cycles, where number of taps is `N`.
 
 The data output is full precision - bitgrowth of all multiply and add operations are carried to the output.
 
-For a comprehensive explanation of this filter, see fpgaguru's post on [element14](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---post-5).
+For a comprehensive explanation of this filter, see fpgaguru's post on [element14](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---post-6).
 
 ## Testbench
 A testbench is available to observe the behaviour of the filter.

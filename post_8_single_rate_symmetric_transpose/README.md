@@ -1,9 +1,9 @@
-# Post 7 - Single Rate odd symmetric FIR, direct architecture
-Latency of `N-1` clock cycles, where number of taps is `N`.
+# Post 8 - Single Rate symmetric FIR, transpose architecture
+Latency of `4 + M_PIPE` clock cycles, where `M_PIPE` is the number of pipeline stages inserted between groups of filter stages. Pipelinine the design is intended to alleviate timing for a high order filter.
 
 The data output is full precision - bitgrowth of all multiply and add operations are carried to the output.
 
-For a comprehensive explanation of this filter, see fpgaguru's post on [element14](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---post-7).
+For a comprehensive explanation of this filter, see fpgaguru's post on [element14](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---post-8).
 
 ## Testbench
 A testbench is available to observe the behaviour of the filter.

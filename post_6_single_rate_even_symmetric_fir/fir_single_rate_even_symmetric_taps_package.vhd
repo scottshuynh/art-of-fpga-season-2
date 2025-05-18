@@ -1,4 +1,4 @@
--- This file was auto-generated using: `py_art_of_fpga: utils.py`
+-- This file was auto-generated using: `post_6_generate_taps.py`
 use work.array_package.all;
 
 package fir_single_rate_even_symmetric_taps_package is

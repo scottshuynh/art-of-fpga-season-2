@@ -5,6 +5,36 @@ from scipy import signal
 from typing import List
 
 
+def generate_example_taps(data_w: int, num_taps: int, author: str, filename: str) -> List[int]:
+    """Generate an example filter.
+
+    Args:
+        data_w (int): Data width
+        num_taps (int): Number of coefficients (taps)
+        author (str): Python file that called this function
+        filename (str): Filename of VHDL file to export taps
+
+    Returns:
+        List[int]: List of coefficients (taps)
+    """
+    bands: List[float] = [0, 0.1, 0.3, 0.5]
+
+    taps = None
+    try:
+        taps = create_arbitrary_filter_taps(bands, num_taps)
+    except:
+        print("Transition `bands` requirements may be too difficult to meet. Consider widening transition bands")
+        print("`num_taps` may be too small to meet requirements of `bands`. Consider increasing to a larger number")
+
+    if taps is not None and taps.any():
+        taps = to_integer_list(taps, data_w)
+        if filename:
+            export_to_vhdl_package(taps, filename, author)
+            print(f"Finished generating {filename}")
+
+    return taps
+
+
 def create_arbitrary_filter_taps(bands: List[float], num_taps: int) -> List[float]:
     """Creates an arbitrary set of filter taps using scipy.signal.remez.
 
@@ -64,7 +94,11 @@ def plot(x: np.ndarray, y: np.ndarray, title: str = "", grid_on: bool = True) ->
     plt.title(title)
 
 
-def export_to_vhdl_package(taps: List[int], package_name: str) -> None:
+def export_to_vhdl_package(
+    taps: List[int],
+    package_name: str,
+    author: str = __package__ + ": " + os.path.basename(__file__),
+) -> None:
     """Creates a VHDL package declaring filter taps as an array of integers.
     The VHDL package file will be placed in the current working directory.
 
@@ -74,7 +108,7 @@ def export_to_vhdl_package(taps: List[int], package_name: str) -> None:
     """
     with open(f"{package_name}.vhd", "w") as f:
         f.write(
-            f"-- This file was auto-generated using: `{__package__ + ": " + os.path.basename(__file__)}`\n"
+            f"-- This file was auto-generated using: `{author}`\n"
             f"use work.array_package.all;\n"
             f"\npackage {package_name} is\n"
             f"\tconstant EXAMPLE_TAPS : array_integer_t := ("
